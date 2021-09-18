@@ -1,20 +1,26 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title> Profile Page </title>
-  </head>
-  
-  <body> 
+<head>
+	<title>Profile Page</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="mycss_webDraft.css">
+	<link rel="stylesheet" href="mycss_tablet.css">
+ 
+	<style>
+		html{
+  		  scroll-behavior: smooth;
+		}
+		p{
+                  color: #000000;
+                  font-size: 19px;
+                }
+	</style>
+</head>
 
-    <h1 style="text-align:center;">Welcome To My Webpage</h1>
-    
-    <hr>
-   <center> <img src="https://www.mountsinai.org/files/MSHealth/Assets/Media/final/new-york-city-brooklyn-bridge-2.jpg" alt="New York City" title="New York City" width="610" height= "300"></center>
-    <hr>
-    
-    <nav>
-    	<h2> Menu </h2>
-    	<ul>
+<body>
+	
+    	<ul id="nav">
+	<li><a class="active">MENU</a></li>
         <li> <a href="#Basic profile information">Basic Profile Information</a></li>
        <li> <a href="#Education">Education Summary</a></li>
        <li> <a href="#Work Experience">Work Experience</a></li>
@@ -24,13 +30,20 @@
        <li> <a href="#Favorite Website">Favorite Website</a></li>
        <li> <a href="#My Projects in this course">My Projects in this course</a></li>
        </ul>
-    </nav>
+	
+	<div style="background-color:#f5beb4; overflow-x:auto;">
+		<h1>Welcome To My Webpagesdsdfsd</h1>
+		 
+		<center> <img src="https://www.mountsinai.org/files/MSHealth/Assets/Media/final/new-york-city-brooklyn-bridge-2.jpg" 
+			       alt="New York City" title="New York City" width="500" height= "300"></center>
+	</div>
+    
     <hr>
     
     
-    <div id="Basic profile information">
-    <h2 style="text-align:center;"> Basic Profile Information </h2>
-      <center><img src="profile-avatar.jpeg" alt="Profile Pic" title="Profile Pic" style="width:185px;height:250px;"></center> <br><br>
+    <div class="BasicProfileInfo" id="Basic profile information">
+    <h2> Basic Profile Information </h2>
+      <center><img id="ProfilePic" src="profile-avatar.jpeg" alt="Profile Pic" title="Profile Pic" style="width:185px;height:250px;"></center> <br><br>
 	<p style="text-align:center;">
     
     <b>Name:</b> Charnjot Bhogal <br>
@@ -43,8 +56,8 @@
   	<hr>
     
     
-    <div id="Education">
-    <h2 style="text-align:center;">Education Summary</h2>
+    <div class="EducationSummary"id="Education">
+    <h2>Education Summary</h2>
     <p>
     This is my fourth and last year at St Johns. I am pursuing a degree in computer science. 
     Some computer science classes that I have taken so far are: CUS 1126 (Data Structures), 
@@ -57,8 +70,8 @@
     </div>
     <hr>
     
-     <div id="Work Experience">
-    <h2 style="text-align:center;">Work Experience</h2>
+     <div class="WorkExperience" id="Work Experience">
+    <h2>Work Experience</h2>
     <p>
     I dont have much work experience but here are a few projects that I have worked on...
     </p>
@@ -75,24 +88,42 @@
     </div>
     <hr>
     
-     <div id="Programming Skills">
-    <h2 style="text-align:center;">Programming Skills</h2>
+     <div class="ProgrammingSkills"id="Programming Skills">
+    <h2>Programming Skills</h2>
     <p> Here is a list of some programming languages that I have used in the past...
     </p>
     
-    <ul>
-    <li>Java (proficient)</li>
-    <li>Python (Familiar)</li>
-    <li>Prolog (Proficient)</li>
-    <li>C++ (Beginner)</li>
-    <li>C# (Beginner)</li>
-    </ul>
-    
+    <table id="LangTable"> 
+  <tr>
+    <th>Programming Language</th>
+    <th>Level</th>
+  </tr>
+  <tr>
+    <td>Java</td>
+    <td>Proficient</td>
+  </tr>
+  <tr>
+    <td>Python</td>
+    <td>Familiar</td>
+  </tr>
+  <tr>
+  	<td>Prolog</td>
+    <td>Proficient</td>
+  </tr>
+   <tr>
+  	<td>C++</td>
+    <td>Beginner</td>
+  </tr>
+   <tr>
+  	<td>C#</td>
+    <td>Beginner</td>
+  </tr>
+</table>
     
     </div>
     <hr>
     
-     <div id="General Interests">
+     <div class="Interests"id="General Interests">
     <h2 style="text-align:center;">General Interests</h2>
     <p>
     Some things that I like to do in my free time are...
@@ -109,10 +140,10 @@
     </div>
     <hr>
     
-     <div id="Favorite song, film, and TV show">
+     <div class="FavoriteSong"id="Favorite song, film, and TV show" style="overflow-x:auto;">
     <h2 style="text-align:center;">Favorite Song, Film, and TV Show</h2>
     
-    <table style="width:100%; background-color: #D6EEEE; text-align:center;">
+    <table id="FavTable">
     <tr>
     <th> Favorite Shows</th>
     <th> Favorite Movies </th>
@@ -135,13 +166,16 @@ src="https://www.youtube.com/embed/RLoKtb4c4W0">
 </iframe>
 <br>
 	
-    <p>Have You Seen 21 Jump Street?</p>
+    
+<form class="screen-only">
 
-<form>
-  <input type="radio" id="Yes" name="have_you_seen" value="YES">
-  <label for="Yes">Yes</label><br>
-  <input type="radio" id="No" name="have_you_seen" value="NO">
-  <label for="No">No</label><br>
+<p>Have You Seen 21 Jump Street?</p>
+
+  <select id="yes/no" name="yes/no">
+  <option value="select">Select</option>
+  <option value="yes">Yes</option>
+  <option value="no">No</option>
+  </select>
 </form> 
    </td>
     
@@ -160,8 +194,8 @@ src="https://www.youtube.com/embed/kTJczUoc26U">
     </div>
     <hr>
     
-     <div id="Favorite Website">
-    <h2 style="text-align:center;">Favorite Website</h2>
+     <div class="FavoriteWebsite"id="Favorite Website">
+    <h2>Favorite Website</h2>
     <p>
     Here are some of my most visited and favorite websites...
     </p>
@@ -176,11 +210,12 @@ src="https://www.youtube.com/embed/kTJczUoc26U">
      
     </ul>
     
+    
     </div>
     <hr>
     
-    <div id="My Projects in this course">
-    <h2 style="text-align:center;">My Projects in this course</h2>
+    <div class="Projects" id="My Projects in this course">
+    <h2>My Projects in this course</h2>
     <p>
     Here is a list of projects that I have completed so far in this course..
     </p>
@@ -192,8 +227,5 @@ src="https://www.youtube.com/embed/kTJczUoc26U">
     </div>
     <hr>
     
-    
-  
-  
-  </body>
+</body>
 </html>
